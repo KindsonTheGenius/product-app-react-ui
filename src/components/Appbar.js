@@ -25,6 +25,7 @@ export default function ButtonAppBar() {
             Products List
           </Typography>
           <Button color="inherit">Logout</Button>
+          <a href='/registration'>REGISTER</a>
         </Toolbar>
       </AppBar>
     </Box>
