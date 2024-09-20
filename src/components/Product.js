@@ -6,14 +6,20 @@ import {
   CardActions,
   Button,
   Divider,
-  Grid
+  Grid,
+  CardHeader
 } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
   if (!product) {
     return (
       <Card sx={{ maxWidth: 600, margin: '20px auto' }}>
+        <CardHeader>
+          Product Details
+        </CardHeader>
         <CardContent>
           <Typography variant="h5" color="text.secondary" align="center">
             Product details are not available.
@@ -23,7 +29,7 @@ const ProductCard = ({ product }) => {
     );
   }
   return (
-    <Card sx={{ maxWidth: 600, margin: '30px auto' }}>
+    <Card sx={{ maxWidth: 900, margin: '30px auto', border: '3px solid #ccc' }}>
       <CardContent>
         <Typography variant="h5" component="div" gutterBottom>
           {product.title} - {product.subCategory.description}
@@ -35,7 +41,7 @@ const ProductCard = ({ product }) => {
 
         <Divider sx={{ my: 2 }} />
 
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography sx={{fontWeight:'bold'}} variant="subtitle1" gutterBottom>
           Summary:
         </Typography>
         <Typography variant="body1">
@@ -44,7 +50,7 @@ const ProductCard = ({ product }) => {
 
         <Divider sx={{ my: 2 }} />
 
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography sx={{fontWeight:'bold'}} variant="subtitle1" gutterBottom>
           Content:
         </Typography>
         <Typography variant="body1">
@@ -66,11 +72,10 @@ const ProductCard = ({ product }) => {
           </Grid>
         </Grid>
       </CardContent>
-
       <CardActions>
-        <Button size="small" color="primary">
-          View More
-        </Button>
+        <Link to="/products" size="small" color="primary">
+          Back to List
+        </Link>
       </CardActions>
     </Card>
   );
