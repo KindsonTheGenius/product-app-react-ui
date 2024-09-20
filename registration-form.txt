@@ -1,0 +1,76 @@
+    <Container maxWidth="xs">
+      <Box sx={{ mt: 8 }}>
+        <Typography variant="h5" align="center" gutterBottom>
+          Register
+        </Typography>
+
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                label="First Name"
+                name="firstname"
+                fullWidth
+                value={formData.firstname}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Last Name"
+                name="lastname"
+                fullWidth
+                value={formData.lastname}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Username"
+                name="username"
+                fullWidth
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Password"
+                name="password"
+                type="password"
+                fullWidth
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Confirm Password"
+                name="confirmPassword"
+                type="password"
+                fullWidth
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            {error && (
+              <Grid item xs={12}>
+                <Typography color="error" variant="body2">
+                  {error}
+                </Typography>
+              </Grid>
+            )}
+            <Grid item xs={12}>
+              <Button type="submit" fullWidth variant="contained" color="primary">
+                Register
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+      </Box>
+    </Container>
