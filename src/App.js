@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Product from './components/Product';
 import Registration from './components/Registration';
 import RegistrationSuccess from './components/RegistrationSuccess';
+import Login from './components/Login';
+import LoginSuccess from './components/LoginSuccess';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path='/product' element={<Product></Product>} />
         <Route path='/registration' element={<Registration></Registration>} />
         <Route path='/registrationSuccess' element={<RegistrationSuccess></RegistrationSuccess>} />
+        <Route path='/login' element={<Login></Login>} />
+        <Route path='/loginSuccess' element={<LoginSuccess></LoginSuccess>} />
       </Routes>
      </BrowserRouter>
     </div>
