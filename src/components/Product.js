@@ -80,7 +80,6 @@ const ProductCard = ({ product }) => {
   );
 };
 
-
 const Product = () => {
 
   const location = useLocation()
@@ -88,7 +87,7 @@ const Product = () => {
 
   useEffect(() => {
     setProduct(location.state.currentProduct)
-  }, [])
+  }, [location.state.currentProduct])
 
   return <ProductCard product={product} />;
 };

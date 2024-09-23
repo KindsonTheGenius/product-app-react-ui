@@ -7,7 +7,10 @@ import {
     Box,
     Container,
     Grid,
-    TextField
+    TextField,
+    Card,
+    CardHeader,
+    CardContent
   } from '@mui/material';
 
 export default function Registration() {
@@ -55,9 +58,14 @@ export default function Registration() {
     }
 
   return (
+    <Card sx={{ maxWidth: 700, margin: '30px auto', border: '3px solid #356' }}>
+    <CardHeader>
+      Login
+    </CardHeader>
+    <CardContent>
     <Container maxWidth="xs">
-    <Box sx={{ mt: 8 }}>
-      <Typography variant="h5" align="center" gutterBottom>
+    <Box sx={{ mt: 0}}>
+      <Typography variant="h4" align="center" gutterBottom>
         Register
       </Typography>
 
@@ -131,5 +139,7 @@ export default function Registration() {
       </form>
     </Box>
   </Container>
+  </CardContent>
+  </Card>
   )
 }

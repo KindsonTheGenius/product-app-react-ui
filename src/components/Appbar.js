@@ -6,8 +6,20 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function ButtonAppBar() {
+
+  const {logout} = useAuth()
+
+  const navigate = useNavigate();
+
+  const logoutUser = () => {
+    logout()
+    navigate("/login")
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -24,7 +36,7 @@ export default function ButtonAppBar() {
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
             Products List
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button onClick={logoutUser} color="inherit">Logout</Button>
           <a href='/registration'>REGISTER</a>
         </Toolbar>
       </AppBar>

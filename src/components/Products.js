@@ -1,7 +1,6 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import {Paper, Box, 
-    IconButton, Button, Dialog, Select, DialogTitle, DialogContent, DialogActions, TextField,
+import { Box, 
+    IconButton, Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField,
     Snackbar,
     Alert,
     Card} 
@@ -179,7 +178,6 @@ export default function Products() {
     })
   }, []);
 
-
   useEffect(() => {
     axiosInstance.get('http://localhost:8080/subCategories').then(response => {
       setAllSubCategories(response.data)
@@ -187,7 +185,6 @@ export default function Products() {
       console.log("There was an error fetching the suCategories", error)
     })
   }, []);
-
 
   // Handle page change
   const handleChangePage = (event, newPage) => {
