@@ -28,15 +28,10 @@ jobs:
     - name: 'Build React App'
       run: npm run build
 
-    # Step 5: Log in to Azure using Service Principal
-    - name: 'Azure Login'
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}  # AZURE_CREDENTIALS secret containing the service principal credentials
-
-    # Step 6: Deploy to Azure Web App
+    # Step 5: Deploy to Azure Web App using Publish Profile
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'product-ui'  # Replace with your Azure App Service name
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: './build'  # Path to the build folder created by React
